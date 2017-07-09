@@ -1,20 +1,24 @@
 -- ----------------------------
 -- Procedure structure for `proc_delete_order`
 -- ----------------------------
-DROP PROCEDURE IF EXISTS `proc_adder`;
+DROP PROCEDURE IF EXISTS `proc_delete_order`;
 DELIMITER ;;
-CREATE  PROCEDURE `proc_adder`(IN a int, IN b int, OUT sum int)
+CREATE  PROCEDURE `proc_delete_order`(IN i_order_no varchar(20), OUT o_total_order int)
 BEGIN
-    #Routine body goes here...
-
-    DECLARE c int;
-    if a is null then set a = 0; 
-    end if;
-  
-    if b is null then set b = 0;
-    end if;
-
-    set sum  = a + b;
+    DECLARE v_order_id 				int ;
+	declare v_workcenter_order_id 	int ;
+	declare v_pv_practice_id 		int ;
+	declare v_
+	
+	
+	/* ???? */
+	DECLARE csr_order CURSOR FOR SELECT id FROM t_ibcp_order where order_no like concat(@i_order_no, '%' ) order by id ;
+	
+	
+	
+	
+	
+	
 END
 ;;
 DELIMITER ;
