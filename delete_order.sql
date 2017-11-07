@@ -14,6 +14,22 @@ delete from t_ibcp_weight_result where order_id in (select id from t_ibcp_order 
 
 
 
+-- delete material related tables - mat_batch, mat_package
+-- tables:material_package, material_batch, material_batch_analysis
+-- delete from t_ibcp_material_package where order_id in (select id from t_ibcp_order where order_no like concat(@v_order_no, '%'));
+
+-- delete material batch which has no packages .
+-- delete from t_ibcp_material_batch where 
+
+
+
+-- init material_batch and material_analysis, material_package
+-- delete from t_ibcp_material_batch ;
+-- delete from t_ibcp_material_analysis ;
+-- delete from t_ibcp_material_package ;
+
+
+
 
 -- delete pv related tables - pv history
 delete from t_ibcp_pv_history where pv_prac_id in( select id from t_ibcp_pv_practice where step_prac_id in( select id from t_ibcp_process_step_practice where workcenter_order_id in (select id from t_ibcp_workcenter_order where order_id in (select id from t_ibcp_order where order_no like concat(@v_order_no, '%'))) ) );
